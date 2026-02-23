@@ -3,7 +3,7 @@ python-telegram-bot==21.0.1
 
 # مكتبات الذكاء الاصطناعي
 google-generativeai==0.8.3
-groq==0.11.0
+groq==0.4.2
 
 # مكتبات إضافية
 python-dotenv==1.0.0
