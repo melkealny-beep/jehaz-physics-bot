@@ -162,7 +162,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     welcome_message = f"""
 👋 أهلاً وسهلاً يا {user.first_name}!
 
-أنا **جهاز الفيزياء** 🤖 - مساعدك الذكي في منصة "متبقاش جهاز في الفيزياء"
+أنا *جهاز الفيزياء* 🤖 - مساعدك الذكي في منصة "متبقاش جهاز في الفيزياء"
 
 🎯 أقدر أساعدك في:
 • شرح مفاهيم الفيزياء بطريقة بسيطة 📚
@@ -175,7 +175,6 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 استخدم /help عشان تشوف كل الأوامر المتاحة.
 """
 
-    # لوحة المفاتيح
     keyboard = [
         [
             InlineKeyboardButton("📚 الكورسات المتاحة", callback_data='courses'),
@@ -191,14 +190,14 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    await update.message.reply_text(welcome_message, reply_markup=reply_markup)
+    await update.message.reply_text(welcome_message, reply_markup=reply_markup, parse_mode='Markdown')
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """أمر /help - المساعدة"""
     help_text = """
-🤖 **دليل استخدام جهاز الفيزياء**
+🤖 *دليل استخدام جهاز الفيزياء*
 
-📋 **الأوامر المتاحة:**
+📋 *الأوامر المتاحة:*
 
 /start - البدء والترحيب
 /help - عرض هذه المساعدة
@@ -207,7 +206,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 /about - معلومات عن المنصة
 /contact - معلومات التواصل
 
-💬 **كيف تستخدمني:**
+💬 *كيف تستخدمني:*
 فقط ابعتلي سؤالك في الفيزياء وأنا هرد عليك!
 
 مثال:
@@ -217,26 +216,26 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 ✨ أنا هنا عشان أساعدك تبقى فاهم مش جهاز! 🚀
 """
-    await update.message.reply_text(help_text)
+    await update.message.reply_text(help_text, parse_mode='Markdown')
 
 async def courses_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """أمر /courses - عرض الكورسات"""
     courses_text = """
-📚 **الكورسات المتاحة - الترم الثاني 2026**
+📚 *الكورسات المتاحة - الترم الثاني 2026*
 
-1️⃣ **كورس الترم كامل**
+1️⃣ *كورس الترم كامل*
 💰 السعر: 300 جنيه
 📅 المدة: الترم الثاني كامل
 ✅ يشمل: جميع دروس الترم + تدريبات + ملخصات
 🔗 https://faresanany.com/course/3
 
-2️⃣ **كورس الشهر الأول**
+2️⃣ *كورس الشهر الأول*
 💰 السعر: 145 جنيه
 📅 المدة: شهر واحد
 ✅ يشمل: دروس الشهر الأول + تمارين
 🔗 https://faresanany.com/course/1
 
-✨ **مميزات الكورسات:**
+✨ *مميزات الكورسات:*
 • شرح مبسط وواضح 📖
 • تجارب تفاعلية وأنيميشن 🎬
 • تدريبات مكثفة 📝
@@ -253,27 +252,27 @@ async def courses_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    await update.message.reply_text(courses_text, reply_markup=reply_markup)
+    await update.message.reply_text(courses_text, reply_markup=reply_markup, parse_mode='Markdown')
 
 async def prices_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """أمر /prices - عرض الأسعار"""
     prices_text = """
-💰 **أسعار الكورسات**
+💰 *أسعار الكورسات*
 
-📦 **كورس الترم كامل**
+📦 *كورس الترم كامل*
 💵 300 جنيه مصري
 
-📦 **كورس الشهر الأول**
+📦 *كورس الشهر الأول*
 💵 145 جنيه مصري
 
-✨ **القيمة المضافة:**
+✨ *القيمة المضافة:*
 ✅ +120 درس متاح
 ✅ متابعة مستمرة
 ✅ شرح تفاعلي
 ✅ ملخصات وملازم
 ✅ دعم فني
 
-💡 **استثمار في مستقبلك التعليمي!**
+💡 *استثمار في مستقبلك التعليمي!*
 
 🌐 للتسجيل: https://faresanany.com/register
 📞 للاستفسار: https://wa.me/201025825268
@@ -285,24 +284,24 @@ async def prices_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    await update.message.reply_text(prices_text, reply_markup=reply_markup)
+    await update.message.reply_text(prices_text, reply_markup=reply_markup, parse_mode='Markdown')
 
 async def about_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """أمر /about - عن المنصة"""
     about_text = """
-ℹ️ **عن منصة "متبقاش جهاز في الفيزياء"**
+ℹ️ *عن منصة "متبقاش جهاز في الفيزياء"*
 
-👨‍🏫 **المدرس:** مستر فارس العناني
-📊 **عدد الطلاب:** +120,000 طالب
-📚 **عدد الدروس:** +120 درس متاح
-🎯 **التخصص:** الفيزياء - الصف الثاني الثانوي
+👨‍🏫 *المدرس:* مستر فارس العناني
+📊 *عدد الطلاب:* +120,000 طالب
+📚 *عدد الدروس:* +120 درس متاح
+🎯 *التخصص:* الفيزياء - الصف الثاني الثانوي
 
-🌟 **رسالتنا:**
+🌟 *رسالتنا:*
 "افهم الفيزياء… متبقاش جهاز"
 
 رحلة تعليمية ممتعة تخليك تكتشف الفيزياء بطريقة مبسطة وتفاعلية!
 
-✨ **مميزاتنا:**
+✨ *مميزاتنا:*
 • شرح مبسط بدون تعقيد
 • تجارب تفاعلية ورسومات متحركة
 • تدريبات مكثفة ومتنوعة
@@ -320,18 +319,18 @@ async def about_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    await update.message.reply_text(about_text, reply_markup=reply_markup)
+    await update.message.reply_text(about_text, reply_markup=reply_markup, parse_mode='Markdown')
 
 async def contact_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """أمر /contact - معلومات التواصل"""
     contact_text = """
-📞 **معلومات التواصل**
+📞 *معلومات التواصل*
 
-💬 **الدعم الفني:**
+💬 *الدعم الفني:*
 📱 واتساب: +201025825268
 🔗 https://wa.me/201025825268
 
-🌐 **السوشيال ميديا:**
+🌐 *السوشيال ميديا:*
 
 📘 فيسبوك:
 https://www.facebook.com/share/1D9WyAjrrG/
@@ -348,7 +347,7 @@ https://whatsapp.com/channel/0029VbBOqpI96H4PKk8t3H1n
 ✈️ قناة التيليجرام:
 https://t.me/Fox9_99
 
-🌐 **الموقع الرسمي:**
+🌐 *الموقع الرسمي:*
 https://faresanany.com
 
 نحن سعداء بخدمتك! 😊
@@ -361,7 +360,7 @@ https://faresanany.com
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    await update.message.reply_text(contact_text, reply_markup=reply_markup)
+    await update.message.reply_text(contact_text, reply_markup=reply_markup, parse_mode='Markdown')
 
 async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """أمر /stats - إحصائيات البوت (للأدمن فقط)"""
@@ -372,26 +371,26 @@ async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     stats_text = f"""
-📊 **إحصائيات البوت**
+📊 *إحصائيات البوت*
 
 🤖 الاسم: جهاز الفيزياء
 ⏰ الوقت: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 🟢 الحالة: يعمل بنجاح
 
-🧠 **الذكاء الاصطناعي:**
+🧠 *الذكاء الاصطناعي:*
 ✅ Gemini: مفعّل (المخ الرئيسي)
 {'✅ Groq: مفعّل (المساعد السريع)' if groq_client else '⚠️ Groq: غير مفعّل'}
 
-📁 **الملفات:**
+📁 *الملفات:*
 ✅ knowledge.txt: محمّل
 
-👨‍💼 **المسؤول:** {ADMIN_USER_ID}
+👨‍💼 *المسؤول:* {ADMIN_USER_ID}
 """
 
-    await update.message.reply_text(stats_text)
+    await update.message.reply_text(stats_text, parse_mode='Markdown')
 
 # ===================================
-# معالجة الأزرار
+# معالجة الأزرار - ✅ التعديل هنا فقط
 # ===================================
 
 async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -400,13 +399,125 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
 
     if query.data == 'courses':
-        await courses_command(update, context)
+        courses_text = """
+📚 *الكورسات المتاحة - الترم الثاني 2026*
+
+1️⃣ *كورس الترم كامل*
+💰 السعر: 300 جنيه
+📅 المدة: الترم الثاني كامل
+✅ يشمل: جميع دروس الترم + تدريبات + ملخصات
+
+2️⃣ *كورس الشهر الأول*
+💰 السعر: 145 جنيه
+📅 المدة: شهر واحد
+✅ يشمل: دروس الشهر الأول + تمارين
+
+✨ *مميزات الكورسات:*
+• شرح مبسط وواضح 📖
+• تجارب تفاعلية وأنيميشن 🎬
+• تدريبات مكثفة 📝
+• ملخصات PDF جاهزة 📄
+"""
+        keyboard = InlineKeyboardMarkup([
+            [InlineKeyboardButton("🌐 زيارة المنصة", url='https://faresanany.com')],
+            [InlineKeyboardButton("📝 التسجيل الآن", url='https://faresanany.com/register')],
+            [InlineKeyboardButton("🔙 الرجوع للقائمة", callback_data='back_home')]
+        ])
+        await query.edit_message_text(courses_text, reply_markup=keyboard, parse_mode='Markdown')
+
     elif query.data == 'prices':
-        await prices_command(update, context)
+        prices_text = """
+💰 *أسعار الكورسات*
+
+📦 *كورس الترم كامل*
+💵 300 جنيه مصري
+
+📦 *كورس الشهر الأول*
+💵 145 جنيه مصري
+
+✨ *القيمة المضافة:*
+✅ \+120 درس متاح
+✅ متابعة مستمرة
+✅ شرح تفاعلي
+✅ ملخصات وملازم
+✅ دعم فني
+
+💡 *استثمار في مستقبلك التعليمي\!*
+"""
+        keyboard = InlineKeyboardMarkup([
+            [InlineKeyboardButton("📝 سجل الآن", url='https://faresanany.com/register')],
+            [InlineKeyboardButton("📞 تواصل معنا", url='https://wa.me/201025825268')],
+            [InlineKeyboardButton("🔙 الرجوع للقائمة", callback_data='back_home')]
+        ])
+        await query.edit_message_text(prices_text, reply_markup=keyboard, parse_mode='Markdown')
+
     elif query.data == 'about':
-        await about_command(update, context)
+        about_text = """
+ℹ️ *عن منصة "متبقاش جهاز في الفيزياء"*
+
+👨‍🏫 *المدرس:* مستر فارس العناني
+📊 *عدد الطلاب:* \+120,000 طالب
+📚 *عدد الدروس:* \+120 درس متاح
+🎯 *التخصص:* الفيزياء \- الصف الثاني الثانوي
+
+🌟 *رسالتنا:*
+"افهم الفيزياء… متبقاش جهاز"
+
+✨ *مميزاتنا:*
+• شرح مبسط بدون تعقيد
+• تجارب تفاعلية ورسومات متحركة
+• تدريبات مكثفة ومتنوعة
+• متابعة دورية مستمرة
+• ملخصات PDF جاهزة
+"""
+        keyboard = InlineKeyboardMarkup([
+            [InlineKeyboardButton("🌐 زيارة المنصة", url='https://faresanany.com')],
+            [InlineKeyboardButton("📱 فيسبوك", url='https://www.facebook.com/share/1D9WyAjrrG/')],
+            [InlineKeyboardButton("🎥 يوتيوب", url='https://youtube.com/@fareselanaany')],
+            [InlineKeyboardButton("🔙 الرجوع للقائمة", callback_data='back_home')]
+        ])
+        await query.edit_message_text(about_text, reply_markup=keyboard, parse_mode='Markdown')
+
     elif query.data == 'support':
-        await contact_command(update, context)
+        support_text = """
+📞 *الدعم الفني \- إحنا معاك\!*
+
+💬 *تواصل معنا عبر:*
+📱 واتساب: \+201025825268
+✈️ تيليجرام: @Fox9\_99
+📘 فيسبوك: متبقاش جهاز في الفيزياء
+
+⏰ *أوقات الدعم:* كل يوم 9 صباحاً \- 11 مساءً
+
+نحن سعداء بخدمتك\! 😊
+"""
+        keyboard = InlineKeyboardMarkup([
+            [InlineKeyboardButton("📱 واتساب", url='https://wa.me/201025825268')],
+            [InlineKeyboardButton("✈️ تيليجرام", url='https://t.me/Fox9_99')],
+            [InlineKeyboardButton("🔙 الرجوع للقائمة", callback_data='back_home')]
+        ])
+        await query.edit_message_text(support_text, reply_markup=keyboard, parse_mode='Markdown')
+
+    elif query.data == 'back_home':
+        welcome_back = """
+🤖 *القائمة الرئيسية*
+
+أنا *جهاز الفيزياء* \- مساعدك الذكي في منصة "متبقاش جهاز في الفيزياء"\!
+
+اختار من القائمة أو ابعتلي سؤالك مباشرة 👇
+"""
+        keyboard = InlineKeyboardMarkup([
+            [
+                InlineKeyboardButton("📚 الكورسات المتاحة", callback_data='courses'),
+                InlineKeyboardButton("💰 الأسعار", callback_data='prices')
+            ],
+            [
+                InlineKeyboardButton("🌐 المنصة", url='https://faresanany.com'),
+                InlineKeyboardButton("📞 الدعم الفني", callback_data='support')
+            ],
+            [InlineKeyboardButton("ℹ️ عن المنصة", callback_data='about')]
+        ])
+        await query.edit_message_text(welcome_back, reply_markup=keyboard, parse_mode='Markdown')
 
 # ===================================
 # معالجة الرسائل
