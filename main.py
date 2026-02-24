@@ -372,20 +372,20 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 📚 *الكورسات المتاحة - الترم الثاني 2026*
 
 1️⃣ *كورس الترم كامل*
-💰 300 جنيه \- جميع دروس الترم \+ تدريبات \+ ملخصات
+💰 300 جنيه - جميع دروس الترم \+ تدريبات \+ ملخصات
 
 2️⃣ *كورس الشهر الأول*
-💰 145 جنيه \- دروس الشهر الأول \+ تمارين
+💰 145 جنيه - دروس الشهر الأول \+ تمارين
 
-✨ شرح تفاعلي \- أنيميشن \- ملخصات PDF جاهزة
+✨ شرح تفاعلي - أنيميشن - ملخصات PDF جاهزة
 
-شغل عالي يا زميلي\.\. ومتبقاش جهاز\! 🍎⚡
+شغل عالي يا زميلي.. ومتبقاش جهاز! 🍎⚡
 """
         keyboard = [
             [InlineKeyboardButton("🌐 زيارة المنصة", url='https://faresanany.com')],
             [InlineKeyboardButton("📝 التسجيل الآن", url='https://faresanany.com/register')],
         ] + back_button
-        await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode='MarkdownV2')
+        await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode='Markdown')
 
     elif query.data == 'prices':
         text = """
@@ -394,58 +394,58 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 📦 *كورس الترم كامل:* 300 جنيه
 📦 *كورس الشهر الأول:* 145 جنيه
 
-✅ \+120 درس \- متابعة مستمرة \- دعم فني
+✅ +120 درس - متابعة مستمرة - دعم فني
 
-💡 استثمار في طاقة الحركة بتاعتك\!
-شغل عالي يا زميلي\.\. ومتبقاش جهاز\! 🍎⚡
+💡 استثمار في طاقة الحركة بتاعتك!
+شغل عالي يا زميلي.. ومتبقاش جهاز! 🍎⚡
 """
         keyboard = [
             [InlineKeyboardButton("📝 سجل الآن", url='https://faresanany.com/register')],
             [InlineKeyboardButton("📞 استفسر واتساب", url='https://wa.me/201025825268')],
         ] + back_button
-        await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode='MarkdownV2')
+        await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode='Markdown')
 
     elif query.data == 'about':
         text = """
 🌟 *عن منصة "متبقاش جهاز في الفيزياء"*
 
 👨‍🏫 *المدرس:* مستر فارس العناني
-📊 \+120,000 طالب \| \+120 درس متاح
-🎯 الفيزياء \- الصف الثاني الثانوي
+📊 +120,000 طالب \| +120 درس متاح
+🎯 الفيزياء - الصف الثاني الثانوي
 
-🍎 *"افهم الفيزياء\.\. ومتبقاش جهاز\!"*
+🍎 *"افهم الفيزياء.. ومتبقاش جهاز!"*
 
-شغل عالي يا زميلي\.\. ومتبقاش جهاز\! 🍎⚡
+شغل عالي يا زميلي.. ومتبقاش جهاز! 🍎⚡
 """
         keyboard = [
             [InlineKeyboardButton("🌐 زيارة المنصة", url='https://faresanany.com')],
             [InlineKeyboardButton("📱 فيسبوك", url='https://www.facebook.com/share/1D9WyAjrrG/')],
             [InlineKeyboardButton("🎥 يوتيوب", url='https://youtube.com/@fareselanaany')],
         ] + back_button
-        await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode='MarkdownV2')
+        await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode='Markdown')
 
     elif query.data == 'support':
         text = """
-📞 *الدعم الفني \- إحنا معاك\!*
+📞 *الدعم الفني - إحنا معاك!*
 
-📱 واتساب: \+201025825268
-✈️ تيليجرام: @Fox9\_99
+📱 واتساب: +201025825268
+✈️ تيليجرام: @Fox9_99
 
-⏰ كل يوم 9 صباحاً \- 11 مساءً
+⏰ كل يوم 9 صباحاً - 11 مساءً
 
-شغل عالي يا زميلي\.\. ومتبقاش جهاز\! 🍎⚡
+شغل عالي يا زميلي.. ومتبقاش جهاز! 🍎⚡
 """
         keyboard = [
             [InlineKeyboardButton("📱 واتساب", url='https://wa.me/201025825268')],
             [InlineKeyboardButton("✈️ تيليجرام", url='https://t.me/Fox9_99')],
         ] + back_button
-        await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode='MarkdownV2')
+        await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode='Markdown')
 
     elif query.data == 'back_home':
         text = """
 🍎 *القائمة الرئيسية*
 
-أنا *نيوتن* \- مساعدك الهايبر في منصة "متبقاش جهاز"\!
+أنا *نيوتن* - مساعدك الهايبر في منصة "متبقاش جهاز"!
 اختار من القائمة أو ابعتلي سؤالك مباشرة 👇
 """
         keyboard = [
@@ -459,7 +459,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             ],
             [InlineKeyboardButton("ℹ️ عن المنصة", callback_data='about')]
         ]
-        await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode='MarkdownV2')
+        await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode='Markdown')
 
 # ===================================
 # 7. معالجة الرسائل النصية
